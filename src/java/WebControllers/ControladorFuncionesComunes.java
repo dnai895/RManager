@@ -6,6 +6,7 @@
 package WebControllers;
 
 import Entidades.Restaurante;
+import Gestores.GestorRestaurante;
 import Gestores.GestorUsuarios;
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +28,9 @@ public class ControladorFuncionesComunes {
     
     @Autowired
     protected GestorUsuarios gUsuarios;
+    
+    @Autowired
+    protected GestorRestaurante gRestaurante;
     
     public void cargaContenidoComun(HttpServletRequest request, ModelAndView view) {
         view.addObject("contextpath", Constantes.CONTEXTPATH);

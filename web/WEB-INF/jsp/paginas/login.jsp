@@ -9,16 +9,16 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Registro | RManager</title>
+        <title>Login | RManager</title>
         <!-- Bootstrap Core CSS -->
         
-        <jsp:include page="./css.jsp"/>
+        <jsp:include page="../css.jsp"/>
     </head>
     <body>
 
         <!-- Navigation -->
         <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-            <div class="container padding-twice">
+            <div class="container">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
                 <!--    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -40,13 +40,13 @@
         </nav>
 
         <!-- Page Content -->
-        <div class="container padding-twice">
+        <div class="container padding-fourth">
 
             <!-- Page Heading/Breadcrumbs -->
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Registro
-                        <small>registrate en tan solo 35 segundos!</small>
+                    <h1 class="page-header">Login
+                      <!--  <small>registrate en tan solo 35 segundos!</small>-->
                     </h1>
                 <!--    <ol class="breadcrumb">
                         <li><a href="index.html">Home</a>
@@ -61,57 +61,9 @@
             <!-- Content Row -->
             <div class="row">
                 <div class="col-lg-12">
-                    <form id="registro" name="registro" method="POST" action="${contextpath}/usuarios/registro.html">
+                    <form id="login" name="login" method="POST" action="${contextpath}/usuarios/login.html">
                         <div class="row">
                             <div class="col-lg-12">
-                                <div class="control-group form-group">
-                                    <div class="controls">
-                                        <label>Nombre del restaurante:</label>
-                                        <input class="form-control" id="nombre" name="nombre" value=""/>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="control-group form-group">
-                                    <div class="controls">
-                                        <label>Direccion:</label>
-                                        <input class="form-control" id="direccion" name="direccion" value=""/>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="control-group form-group">
-                                    <div class="controls">
-                                        <label>Telefono:</label>
-                                        <input class="form-control" id="telefono" name="telefono" value=""/>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="control-group form-group">
-                                    <div class="controls">
-                                        <label>Email:</label>
-                                        <input class="form-control" id="email" name="email" value=""/>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-6">
-                                <div class="control-group form-group">
-                                    <div class="controls">
-                                        <label>Web:</label>
-                                        <input class="form-control" id="web" name="web" value=""/>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-6">
                                 <div class="control-group form-group">
                                     <div class="controls">
                                         <label>Username:</label>
@@ -121,19 +73,11 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-6">
+                            <div class="col-lg-12">
                                 <div class="control-group form-group">
                                     <div class="controls">
                                         <label>Password:</label>
-                                        <input type="password" class="form-control" id="password" name="password" value=""/>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-lg-6">
-                                <div class="control-group form-group">
-                                    <div class="controls">
-                                        <label>Confirma la password:</label>
-                                        <input type="password" class="form-control" id="cfpassword" name="cfpassword" value=""/>
+                                        <input type="password" class="form-control" id="passwd" name="passwd" value=""/>
                                     </div>
                                 </div>
                             </div>
@@ -157,10 +101,14 @@
             $("#submit").click(function() {
                 $.ajax({
                     type: "POST",
-                    url: "${contextpath}/usuarios/registro.html", 
-                    data: $("#registro").serialize(),
+                    url: "${contextpath}/usuarios/login.html", 
+                    data: $("#login").serialize(),
                     success: function(result){
-                        alert("Restaurante registrado correctamente");
+                        if(result === "ok") {
+                            alert("¡Login OK!");
+                        } else {
+                            alert("¡Datos incorrectos!");
+                        }
                     },
                     error: function(jqXHR, textStatus, errorThrown) {
                         alert("UPS! ha habido un error en el proceso. Vuelva a intentarlo o contacte con el equipo técnico.");
@@ -169,6 +117,6 @@
             });
         </script>
         <!-- /.container -->
-        <jsp:include page="./scripts.jsp"/>
+        <jsp:include page="../scripts.jsp"/>
     </body>
 </html>

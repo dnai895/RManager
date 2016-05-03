@@ -30,6 +30,8 @@ public class Restaurante implements Serializable {
     private String  longitud;
     
     private String fecha;
+    
+    private boolean logado;
 
     public Restaurante() {
     }
@@ -129,6 +131,23 @@ public class Restaurante implements Serializable {
     public void setFecha(String fecha) {
         this.fecha = fecha;
     }
+
+    public boolean isLogado() {
+        return logado;
+    }
+
+    public void setLogado(boolean logado) {
+        this.logado = logado;
+    }
     
-    
+    public void setRestaurante(Restaurante rest) {
+        this.setIdRestaurante(rest.getIdRestaurante());
+        this.setNombre(rest.getNombre());
+        this.setEmail(rest.getEmail());
+        this.setTelefono(rest.getTelefono());
+        this.setDireccion(rest.getDireccion());
+        this.setWeb(rest.getWeb());
+        this.setLatitud(rest.getLatitud());
+        this.setLongitud(rest.getLongitud());
+    }
 }

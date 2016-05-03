@@ -13,6 +13,11 @@ and open the template in the editor.
     padding-right: 15%;
 }
 
+.padding-fourth {
+    padding-left: 25%;
+    padding-right: 25%;
+}
+
 .fright {
     float: right;
 }

@@ -5,9 +5,12 @@
  */
 package Gestores;
 
+import BBDDMapper.Int_StringMapper;
+import Entidades.Int_String;
 import Entidades.Restaurante;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
@@ -22,6 +25,8 @@ public class GestorUsuarios {
     
     @Autowired
     private JdbcTemplate jdbcTemplate;
+    @Autowired
+    private GestorHash gHash;
     
     public boolean checkDataUsuario(Restaurante restaurante) {
         boolean resultado = true;
@@ -38,9 +43,29 @@ public class GestorUsuarios {
             String query = "INSERT INTO restaurante (nombre, direccion, telefono, username, passwd, web, email, fecha) "
                             + "VALUES (?,?,?,?,?,?,?,?)";
             jdbcTemplate.update(query, new Object[]{restaurante.getNombre(), restaurante.getDireccion(), restaurante.getTelefono(),
-            restaurante.getUsername(), restaurante.getPassword(), restaurante.getWeb(), restaurante.getEmail(), fecha});
+            restaurante.getUsername(), gHash.md5(restaurante.getPassword()), restaurante.getWeb(), restaurante.getEmail(), fecha});
         } catch(Exception e) {
             General.log("GestorUsuarios", "ERROR en registraUsuario: "+e.getMessage());
         }
+    }
+    
+    public boolean login(String username, String password) {
+        boolean logado = false;
+        List<Int_String> lista = null;
+        try {
+            String query = "SELECT idRestaurante, username "
+                    + "FROM restaurante "
+                    + "WHERE username = ? AND passwd = ? "
+                    + "LIMIT 1";
+            lista = jdbcTemplate.query(query, new Int_StringMapper(), new Object[]{username, gHash.md5(password)});
+            if(lista != null && lista.size() == 1 &&lista.get(0) != null) {
+                if(username.equals(lista.get(0).getTexto())) {
+                    logado = true;
+                }
+            }
+        } catch(Exception e) {
+            General.log("GestorUsuarios", "ERROR en login: "+e.getMessage());
+        }
+        return logado;
     }
 }

@@ -61,6 +61,14 @@
         <!-- collaborators and configuration for this bean go here -->
     </bean>
     
+    <bean id="gHash" class="Gestores.GestorHash" scope="prototype">
+        <!-- collaborators and configuration for this bean go here -->
+    </bean>
+    
+    <bean id="gRestaurante" class="Gestores.GestorRestaurante" scope="prototype">
+        <!-- collaborators and configuration for this bean go here -->
+    </bean>
+    
     <mvc:resources mapping="/resources/**" location="/resources/" />
  
     <mvc:annotation-driven />
