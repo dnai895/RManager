@@ -40,7 +40,7 @@
         </nav>
 
         <!-- Page Content -->
-        <div class="container padding-twice">
+        <div class="container panel padding-twice">
 
             <!-- Page Heading/Breadcrumbs -->
             <div class="row">

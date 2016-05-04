@@ -40,7 +40,7 @@
         </nav>
 
         <!-- Page Content -->
-        <div class="container padding-fourth">
+        <div class="container panel padding-fourth">
 
             <!-- Page Heading/Breadcrumbs -->
             <div class="row">
