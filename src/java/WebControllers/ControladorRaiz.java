@@ -22,17 +22,17 @@ public class ControladorRaiz extends ControladorFuncionesComunes {
         
     @RequestMapping(value="", method=RequestMethod.GET)
     public ModelAndView index( HttpServletRequest request ) {
-        ModelAndView result = new ModelAndView("index");
+        ModelAndView result = new ModelAndView("paginas/landing");        
+    /*    ModelAndView result = new ModelAndView("index");
         restaurante.setIdRestaurante(1);
         restaurante.setNombre("JFD");
-        result.addObject("holaMundo", "Hola mundo, si señor");
+        result.addObject("holaMundo", "Hola mundo, si señor");*/
         return result;
     } 
     
-    @RequestMapping(value="restaurant-manager", method=RequestMethod.GET)
+    @RequestMapping(value="landing", method=RequestMethod.GET)
     public ModelAndView landing( HttpServletRequest request ) {
-        ModelAndView result = new ModelAndView("landing");
-        cargaContenidoComun(request, result);
+        ModelAndView result = new ModelAndView("paginas/landing");
         return result;
     } 
     
