@@ -22,7 +22,7 @@ public class ControladorRaiz extends ControladorFuncionesComunes {
         
     @RequestMapping(value="", method=RequestMethod.GET)
     public ModelAndView index( HttpServletRequest request ) {
-        ModelAndView result = new ModelAndView("paginas/landing");        
+        ModelAndView result = new ModelAndView("landing");        
     /*    ModelAndView result = new ModelAndView("index");
         restaurante.setIdRestaurante(1);
         restaurante.setNombre("JFD");
@@ -32,7 +32,7 @@ public class ControladorRaiz extends ControladorFuncionesComunes {
     
     @RequestMapping(value="landing", method=RequestMethod.GET)
     public ModelAndView landing( HttpServletRequest request ) {
-        ModelAndView result = new ModelAndView("paginas/landing");
+        ModelAndView result = new ModelAndView("landing");
         return result;
     }
     
@@ -49,12 +49,3 @@ public class ControladorRaiz extends ControladorFuncionesComunes {
     }    
     
 }
-
-//        try {
-//            List<Int_String> list = jdbcTemplate.query("SELECT idRestaurante, nombre FROM RESTAURANTE", new Int_StringMapper(), new Object[]{});
-//            for (Int_String col : list) {
-//                System.out.println("- ("+col.getValor()+") "+col.getTexto());
-//            }
-//        } catch(Exception e) {
-//            System.out.println("ERROR en index: "+e.getMessage());
-//        }
