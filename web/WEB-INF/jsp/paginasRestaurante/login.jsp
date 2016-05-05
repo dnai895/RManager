@@ -105,7 +105,7 @@
                     data: $("#login").serialize(),
                     success: function(result){
                         if(result === "ok") {
-                            window.location = "${contextpath}/home.html";
+                            window.location = "${contextpath}/restaurante/home.html";
                         } else {
                             alert("¡Datos incorrectos!");
                         }

@@ -23,7 +23,7 @@ public class WebControllerUsuarios extends ControladorFuncionesComunes {
     
     @RequestMapping(value="registro", method=RequestMethod.GET)
     public ModelAndView viewRegistro( HttpServletRequest request ) {
-        ModelAndView result = new ModelAndView("paginas/registro");
+        ModelAndView result = new ModelAndView("paginasRestaurante/registro");
         cargaContenidoComun(request, result);
 
         return result;
@@ -31,7 +31,7 @@ public class WebControllerUsuarios extends ControladorFuncionesComunes {
     
     @RequestMapping(value="registro", method=RequestMethod.POST)
     public ModelAndView serviceRegistro( HttpServletRequest request ) {
-        ModelAndView result = new ModelAndView("paginas/registro");
+        ModelAndView result = new ModelAndView("paginasRestaurante/registro");
         cargaContenidoComun(request, result);
         
         String nombre       = getParametroString("nombre", request);

@@ -161,7 +161,7 @@
                     data: $("#registro").serialize(),
                     success: function(result){
                         alert("Restaurante registrado correctamente");
-                        window.location = "${contextpath}/home.html";
+                        window.location = "${contextpath}/restaurante/home.html";
                     },
                     error: function(jqXHR, textStatus, errorThrown) {
                         alert("UPS! ha habido un error en el proceso. Vuelva a intentarlo o contacte con el equipo técnico.");
