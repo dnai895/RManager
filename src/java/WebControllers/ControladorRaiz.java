@@ -32,16 +32,15 @@ public class ControladorRaiz extends ControladorFuncionesComunes {
     @RequestMapping(value="restaurant-manager", method=RequestMethod.GET)
     public ModelAndView landing( HttpServletRequest request ) {
         ModelAndView result = new ModelAndView("landing");
+        cargaContenidoComun(request, result);
+        return result;
+    } 
+    
+    @RequestMapping(value="home", method=RequestMethod.GET)
+    public ModelAndView home( HttpServletRequest request ) {
+        ModelAndView result = new ModelAndView("paginas/home");
+        cargaContenidoComun(request, result);
         return result;
     } 
     
 }
-
-//        try {
-//            List<Int_String> list = jdbcTemplate.query("SELECT idRestaurante, nombre FROM RESTAURANTE", new Int_StringMapper(), new Object[]{});
-//            for (Int_String col : list) {
-//                System.out.println("- ("+col.getValor()+") "+col.getTexto());
-//            }
-//        } catch(Exception e) {
-//            System.out.println("ERROR en index: "+e.getMessage());
-//        }

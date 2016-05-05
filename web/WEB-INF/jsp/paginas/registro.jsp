@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Registro | RManager</title>
+        <title>Registro | Class Royal</title>
         <!-- Bootstrap Core CSS -->
         
         <jsp:include page="../css.jsp"/>
@@ -27,7 +27,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button> -->
-                    <a class="navbar-brand" href="index.html">RMANAGER</a>
+                    <a class="navbar-brand" href="index.html">CLASS ROYAL</a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -161,6 +161,7 @@
                     data: $("#registro").serialize(),
                     success: function(result){
                         alert("Restaurante registrado correctamente");
+                        window.location = "${contextpath}/home.html";
                     },
                     error: function(jqXHR, textStatus, errorThrown) {
                         alert("UPS! ha habido un error en el proceso. Vuelva a intentarlo o contacte con el equipo técnico.");

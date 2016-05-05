@@ -18,10 +18,18 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 @RequestMapping("/restaurant/*")
 public class WebControllerRestaurante {
+    
     @RequestMapping(value="list", method=RequestMethod.GET)
     public ModelAndView index( HttpServletRequest request ) {
         ModelAndView result = new ModelAndView("index");
         result.addObject("holaMundo", "Hola mundo, si señor");
+        return result;
+    } 
+    
+    @RequestMapping(value="home", method=RequestMethod.GET)
+    public ModelAndView home( HttpServletRequest request ) {
+        ModelAndView result = new ModelAndView("paginas/home");
+        
         return result;
     } 
 }

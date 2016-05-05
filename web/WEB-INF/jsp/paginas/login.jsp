@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Login | RManager</title>
+        <title>Login | Class Royal</title>
         <!-- Bootstrap Core CSS -->
         
         <jsp:include page="../css.jsp"/>
@@ -27,7 +27,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button> -->
-                    <a class="navbar-brand" href="index.html">RMANAGER</a>
+                    <a class="navbar-brand" href="index.html">CLASS ROYAL</a>
                 </div>
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -105,7 +105,7 @@
                     data: $("#login").serialize(),
                     success: function(result){
                         if(result === "ok") {
-                            alert("¡Login OK!");
+                            window.location = "${contextpath}/home.html";
                         } else {
                             alert("¡Datos incorrectos!");
                         }
