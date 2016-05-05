@@ -34,7 +34,19 @@ public class ControladorRaiz extends ControladorFuncionesComunes {
     public ModelAndView landing( HttpServletRequest request ) {
         ModelAndView result = new ModelAndView("paginas/landing");
         return result;
-    } 
+    }
+    
+    @RequestMapping(value="home", method=RequestMethod.GET)
+    public ModelAndView home( HttpServletRequest request ) {
+        ModelAndView result = new ModelAndView("paginas/home");
+        return result;
+    }
+    
+    @RequestMapping(value="backend", method=RequestMethod.GET)
+    public ModelAndView backend( HttpServletRequest request ) {
+        ModelAndView result = new ModelAndView("paginas/backend");
+        return result;
+    }    
     
 }
 

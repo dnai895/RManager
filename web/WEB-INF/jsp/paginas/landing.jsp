@@ -16,6 +16,7 @@
 
     <!-- Custom CSS -->
     <link href="css/agency.css" rel="stylesheet">
+    <link href="css/custom_landing.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -39,9 +40,9 @@
         <div class="container">
             <div class="intro-text">
                 <div class="intro-lead-in">Bienvenid@ a Class Royal</div>
-                <div class="intro-heading">¿Eres un cliente o un restaurante?</div>
-                <a href="#services" class="page-scroll btn btn-xl">Soy un cliente</a>                
-                <a href="#services" class="page-scroll btn btn-xl">Soy un restaurante</a>
+                <div class="intro-heading">¿Eres cliente o restaurante?</div>
+                <a href="${contextpath}/home.html" class="page-scroll btn btn-xl clientes">Soy un cliente</a>                
+                <a href="${contextpath}/backend.html" class="page-scroll btn btn-xl">Soy un restaurante</a>
             </div>
         </div>
     </header>
