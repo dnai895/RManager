@@ -39,10 +39,10 @@
     <header>
         <div class="container">
             <div class="intro-text">
-                <div class="intro-lead-in">Bienvenid@ a Class Royal</div>
+                <div class="intro-lead-in">Bienvenid@ a <!--Class Royal--><img alt="logo" src="img/logo.png" style="margin: -82px 0 0 -12px"/></div>
                 <div class="intro-heading">¿Eres un cliente o un restaurante?</div>
-                <a href="#services" class="page-scroll btn btn-xl">Soy un cliente</a>                
-                <a href="#services" class="page-scroll btn btn-xl">Soy un restaurante</a>
+                <a href="" class="page-scroll btn btn-xl">Soy un cliente</a> 
+                <a href="" class="page-scroll btn btn-xl">Soy un restaurante</a>
             </div>
         </div>
     </header>

@@ -1,5 +1,6 @@
-.intro-lead-in{padding-bottom: 0px}
+.intro-lead-in{padding-bottom: 0px; color: #e1eff8 !important; font-size: 2.2em !important; margin-left: 22px;}
+.intro-heading{color: #b3d4b9 !important; font-size: 1.5em !important; margin-top: -50px;}
 html{height: 100%}
-body{height: 100%}
+body{height: 100%; overflow: hidden}
 header{min-height: 100%; height: auto}
-a{width: 28%; margin: auto}
+a{width: 28%; margin: 7%; margin-top: 13%; border: 1px solid #999 !important; background-color: #305b2e !important;}
