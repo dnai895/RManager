@@ -55,4 +55,16 @@ public class ControladorFuncionesComunes {
         }
         return param;
     }
+    
+    public double getParametroDouble(String parametro, HttpServletRequest request) {
+        double param = 0;
+        if(request.getParameter(parametro) != null && !request.getParameter(parametro).isEmpty()) {
+            try {
+                param = Double.parseDouble(request.getParameter(parametro));
+            } catch (NumberFormatException e) {
+                
+            }
+        }
+        return param;
+    }
 }
